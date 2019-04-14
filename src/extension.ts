@@ -11,7 +11,7 @@ export function activate(context: vscode.ExtensionContext): void {
         return vscode.window.showErrorMessage("TextEditor is not active!");
       }
 
-      let tableFormat: string | undefined = await vscode.window.showInputBox({
+      const tableFormat: string | undefined = await vscode.window.showInputBox({
         ignoreFocusOut: true,
         placeHolder: "lcccr",
         prompt: "column positioning (e.g. lcccr)"
@@ -20,9 +20,9 @@ export function activate(context: vscode.ExtensionContext): void {
       if (!tableFormat) {
         return vscode.window.showErrorMessage("Input value is empty.");
       } else {
-        tableFormat = tableFormat.trim();
+        const tableFormatTrimmed: string = tableFormat.trim();
 
-        if (!/^[lcr]+$/.test(tableFormat)) {
+        if (!/^[lcr]+$/.test(tableFormatTrimmed)) {
           return vscode.window.showErrorMessage(
             "Do not use characters other than l, c and r."
           );
@@ -49,7 +49,10 @@ export function activate(context: vscode.ExtensionContext): void {
           } else {
             await editor.edit(
               (builder: vscode.TextEditorEdit): void => {
-                builder.insert(editor.selection.start, "TODO");
+                builder.insert(
+                  editor.selection.start,
+                  createTable(tableFormatTrimmed, numberOfLines)
+                );
               }
             );
           }
