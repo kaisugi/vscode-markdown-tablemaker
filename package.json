@@ -2,17 +2,25 @@
 	"name": "markdown-table-maker",
 	"displayName": "MarkdownTableMaker",
 	"description": "More Intuitive Way to Generate Markdown Tables",
-	"version": "1.0.0",
+  "version": "1.0.0",
+  "publisher": "hellorusk",
 	"engines": {
 		"vscode": "^1.33.0"
 	},
 	"categories": [
 		"Other"
-	],
+  ],
+  "keywords": [
+    "markdown"
+  ],
 	"activationEvents": [
 		"onCommand:tablemaker.make"
 	],
-	"main": "./out/extension.js",
+  "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:7ma7X/vscode-markdown-tablemaker.git"
+  },
 	"contributes": {
 		"commands": [
 			{
