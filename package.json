@@ -2,7 +2,7 @@
   "name": "markdown-table-maker",
   "displayName": "Markdown Table Maker",
   "description": "More Intuitive Way to Generate Markdown Tables",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "hellorusk",
   "engines": {
     "vscode": "^1.33.0"
